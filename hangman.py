@@ -6,6 +6,7 @@ from parse_phrase import parse_phrase
 import random
 import string
 import re
+from draw import draw_stick
 import os
 
 class Phrase:
@@ -68,6 +69,7 @@ class Game:
         print(self.current_phrase.get_hidden())
         print('\nGuesses Remaining: %s' % self.guesses_remaining)
         print('Score: %s' % self.score)
+        draw_stick(self.guesses_remaining)
     
     #check if guess is valid
     def is_guess_valid(self, guess):
