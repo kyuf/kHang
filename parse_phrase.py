@@ -10,6 +10,10 @@ def parse_phrase(phrase):
     #store phrase key as a dictionary of lists containing letter locations
     phrase_key = {}
     
+    #reject non-string inputs
+    if type(phrase) != str:
+        return False
+    
     #iterate through given phrase
     for i in range(len(phrase)):
         #convert letter to uppercase
@@ -24,7 +28,7 @@ def parse_phrase(phrase):
             #add two spaces if letter is a space
             phrase_hidden.append('  ')
         else:
-            #add space and _
+            #add _ and space
             phrase_hidden.append('_ ')
         
         #add letter location to phrase key
