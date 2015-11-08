@@ -11,6 +11,9 @@ Current Features
 * 11 phrases to guess
 * Stickman graphic that appears as incorrect guesses are made
 
-       O
-      /|\
-      / \
+Instructions
+--------
+
+Enter the following in your command line
+
+    python3 hangman.py
