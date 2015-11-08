@@ -180,5 +180,6 @@ def main():
         #check if guess is in phrase and update accordingly
         game.check_guess(guess)
 
-main()
+if __name__ == '__main__':
+    main()
     
