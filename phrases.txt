@@ -7,3 +7,5 @@
 'water bottle'
 'oatmeal'
 'pillow'
+'turkey'
+'eclipse'
