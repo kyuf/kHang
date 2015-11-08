@@ -10,3 +10,7 @@ Current Features
 
 * 11 phrases to guess
 * Stickman graphic that appears as incorrect guesses are made
+
+       O
+      /|\
+      / \
