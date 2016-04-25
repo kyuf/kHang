@@ -28,7 +28,7 @@ class Phrase:
     
     #get current state of hidden phrase
     def get_hidden(self):
-        return ''.join(self.hidden)
+        return ' '.join(self.hidden)
     
     #get key
     def get_key(self):

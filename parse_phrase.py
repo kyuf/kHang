@@ -25,11 +25,10 @@ def parse_phrase(phrase):
         
         #construct hidden phrase
         if letter == ' ':
-            #add two spaces if letter is a space
-            phrase_hidden.append('  ')
+            phrase_hidden.append(' ')
         else:
-            #add _ and space
-            phrase_hidden.append('_ ')
+            #convert letter to underscore
+            phrase_hidden.append('_')
         
         #add letter location to phrase key
         if letter in phrase_key:
