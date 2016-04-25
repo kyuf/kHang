@@ -50,9 +50,7 @@ class Game:
         #generate random order of phrases to be played
         random.shuffle(self.phrase_list)
         #start next phrase
-        self.get_next_phrase()
-        #empty list of bad guesses initially
-        self.bad_guesses = []
+        self.get_next_phrase()    
     
     #get new phrase for game by popping from phrase list and reset guess set
     def get_next_phrase(self):
@@ -62,6 +60,8 @@ class Game:
         self.guesses_remaining = 6
         #track number of correct guesses to determine if solved
         self.correct_guesses = 0
+        #empty list of bad guesses initially
+        self.bad_guesses = []
     
     #display current state of the game
     def display(self, valid = True):
@@ -131,8 +131,15 @@ class Game:
         return self.score
         
 def main():
+    #clear screen
+    def clear():
+        if os.name == 'nt':
+            os.system('cls')
+        else:
+            os.system('clear')
+
     #clear screen on start
-    os.system('clear')
+    clear()
     
     #print welcome message
     print('Welcome to Hangman')
@@ -150,7 +157,7 @@ def main():
     game = Game(phrase_list)
     
     #clear screen to start game
-    os.system('clear')
+    clear()
     
     #loop game session until game ends
     while True:
@@ -168,7 +175,7 @@ def main():
                 print('Solved!')
                 input('Press Enter to move to next phrase..')
                 game.get_next_phrase()
-                os.system('clear')
+                clear()
                 continue
         
         #end game if 0 guesses remaining
@@ -180,7 +187,7 @@ def main():
         #loop until player guesses a valid letter
         while True:
             guess = input('Enter guess: ').upper()
-            os.system('clear')
+            clear()
             if game.is_guess_valid(guess):
                 break
             else:
