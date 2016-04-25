@@ -51,6 +51,8 @@ class Game:
         random.shuffle(self.phrase_list)
         #start next phrase
         self.get_next_phrase()
+        #empty list of bad guesses initially
+        self.bad_guesses = []
     
     #get new phrase for game by popping from phrase list and reset guess set
     def get_next_phrase(self):
@@ -68,6 +70,7 @@ class Game:
             print('\n')
         print(self.current_phrase.get_hidden())
         print('\nGuesses Remaining: %s' % self.guesses_remaining)
+        print('Bad Guesses: %s' % self.show_bad_guesses())
         print('Score: %s' % self.score)
         draw_stick(self.guesses_remaining)
     
@@ -93,6 +96,11 @@ class Game:
         else:
             #reduce number of guesses remaining if incorrect
             self.guesses_remaining -= 1
+            self.bad_guesses.append(guess)
+
+    #show incorrect letters guessed
+    def show_bad_guesses(self):
+        return ' '.join(self.bad_guesses)
     
     #check if phrase is solved
     def is_solved(self):
