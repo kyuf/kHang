@@ -13,6 +13,6 @@ def draw_stick(guesses_remaining):
     r_arm = '\\' if guesses_remaining <= 2 else ' '
     l_leg = '/' if guesses_remaining <= 1 else ' '
     r_leg = '\\' if guesses_remaining == 0 else ' '
-    print('\n    %s' % head)
-    print('   %s%s%s' % (l_arm, body, r_arm))
-    print('   %s %s\n' % (l_leg, r_leg))
+    print('\n%s' % head.center(9))
+    print((l_arm + body + r_arm).center(9))
+    print('%s\n' % ' '.join([l_leg, r_leg]).center(9))
